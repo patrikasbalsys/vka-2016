@@ -1,0 +1,58 @@
+{%  extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <a class="btn btn-default" href="{{ path("model_new") }}">
+        <i class="glyphicon glyphicon-plus"></i>New Model
+    </a>
+
+    <br><br>
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cord Size</th>
+            <th>Cord Amount</th>
+            <th>Accent</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th class="text-right">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for model in models %}
+            <tr>
+                <td>{{ model.name }}</td>
+                <td>{{ model.cordSize }}</td>
+                <td>{{ model.cordAmount }}</td>
+                <td>
+                    {% if model.isAccent %}
+                    <i class="glyphicon glyphicon-ok-circle"></i>
+                    {% else %}
+
+                    {% endif %}
+                </td>
+                <td>{{ model.price }}</td>
+                <td>
+                    {% if model.image %}
+                        <img src="{{ asset('resources/images/models/' ~ model.image) }}" style="width: 50px">
+                    {% else %}
+                        <img src="{{ asset('resources/images/models/Default0.jpg') }}" style="width: 50px">
+                    {% endif %}
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-danger btn-sm" href="{{ path("model_delete", {model: model.id}) }}">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" href="{{ path("model_edit", {model: model.id}) }}">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

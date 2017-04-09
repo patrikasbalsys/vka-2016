@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <style type="text/css">
+        html, body {
+            height: calc(100% - 52px);
+            margin: 0;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            margin: 0 auto;
+        }
+    </style>
+
+    <div class="row" id="wrapper" style="width: 100%; background-image: url({{ asset('resources/images/BlueWeave.png') }})">
+        <div class="col-xs-8 col-xs-push-2  col-md-6 col-md-push-3" style="background-color: white; opacity: 0.90">
+
+            <img src="{{ asset('resources/images/collage/Jester0.jpg') }}" style="width: 100%; margin: 0">
+
+            <h3>Jester</h3>
+
+            <h5>The Jester is made from 550 paracord and a solid copper Smiley bead. Release your inner creepiness!</h5>
+
+            <p><b>Default Price:</b> 3€</p>
+
+            {%  form_theme form 'bootstrap_3_layout.html.twig' %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

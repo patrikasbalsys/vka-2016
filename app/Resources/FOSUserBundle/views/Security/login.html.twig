@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+
+    <style type="text/css">
+        html, body {
+            height: calc(100% - 52px);
+            margin: 0;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            margin: 0 auto;
+        }
+    </style>
+
+{% if error %}
+    <div class="alert alert-danger">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+    </div>
+{% endif %}
+
+    <div class="row" id="wrapper" style="width: 100%; background-image: url({{ asset('resources/images/IehB7.png') }})">
+        <div class="col-xs-10 col-xs-push-1" style="background-color: white; opacity: 0.90">
+            <br>
+
+
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+
+                <label for="username">{{ 'security.login.username'|trans }}</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /><br>
+
+                <label for="password">{{ 'security.login.password'|trans }}</label>
+                <input type="password" id="password" name="_password" required="required" /><br>
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label><br>
+
+                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            </form>
+
+
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

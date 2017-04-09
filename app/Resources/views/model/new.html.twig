@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>{{ quote }}</h1>
+    <a href="{{ path('model_list') }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-arrow-left"></i>
+        Back to list
+    </a>
+
+    <br><br>
+
+    {{ include('model/_form.html.twig') }}
+
+{% endblock %}

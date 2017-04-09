@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <style type="text/css">
+        html, body {
+            height: calc(100% - 52px);
+            margin: 0;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            margin: 0 auto;
+        }
+
+        .row {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .col-xs-3 {
+            padding: 0;
+            margin: 0;
+            display:table-cell;
+            vertical-align:middle;
+            text-align:center;
+            background-color: white;
+            opacity: 0.97;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+
+            padding: 0;
+            margin: 0;
+            display: table-cell;
+
+
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%)
+        }
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            color: black;
+            font-size: 16px;
+
+        }
+
+    </style>
+
+    <div id="wrapper" style="width: 100%">
+    <div class="row">
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('trio_shop') }}">
+                    <img src="{{ asset('resources/images/models/Trio0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Trio <br> <div class="text" style="font-size: 12px">starting from 3€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('antique_shop') }}">
+                    <img src="{{ asset('resources/images/models/Antique0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Antique <br> <div class="text" style="font-size: 12px">starting from 3€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('jester_shop') }}">
+                    <img src="{{ asset('resources/images/models/Jester0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Jester <br> <div class="text" style="font-size: 12px">starting from 40€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('thimble_shop') }}">
+                    <img src="{{ asset('resources/images/models/Thimble0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Thimble <br> <div class="text" style="font-size: 12px">starting from 3€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('solomon_shop') }}">
+                    <img src="{{ asset('resources/images/models/Solomon0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Solomon <br> <div class="text" style="font-size: 12px">starting from 4€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('thinline_shop') }}">
+                    <img src="{{ asset('resources/images/models/Thinline0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Thinline <br> <div class="text" style="font-size: 12px">starting from 4€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('snake_shop') }}">
+                    <img src="{{ asset('resources/images/models/Snake0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Snake <br> <div class="text" style="font-size: 12px">starting from 6€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('monkey_shop') }}">
+                    <img src="{{ asset('resources/images/models/Monkey0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Monkey <br> <div class="text" style="font-size: 12px">starting from 4€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('doubleInfi_shop') }}">
+                    <img src="{{ asset('resources/images/models/DoubleInfi0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Double Infi <br> <div class="text" style="font-size: 12px">starting from 4€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+                <a href="{{ path('tripleInfi_shop') }}">
+                    <img src="{{ asset('resources/images/models/TripleInfi0.jpg') }}" class="image">
+                    <div class="middle">
+                        <div class="text">Triple Infi <br> <div class="text" style="font-size: 12px">starting from 5€</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+
+            </div>
+        </div>
+        <div class="col-xs-3 col-lg-2 col-lg-push-2">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}

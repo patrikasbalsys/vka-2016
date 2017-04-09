@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Paraweave{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('resources/images/logo/LogoTransparent.png') }}" />
+        <link rel="stylesheet" href="{{ asset('resources/bootstrap/css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('resources/bootstrap/css/custom.css') }}">
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+    </head>
+    <body>
+
+   {{ include('navigation/navbar.html.twig') }}
+
+
+        {% block body %}{% endblock %}
+
+
+
+        {% block javascripts %}{% endblock %}
+
+        <script
+                src="https://code.jquery.com/jquery-1.12.4.min.js"
+                integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+                crossorigin="anonymous"></script>
+
+        <script src ="{{ asset('resources/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+</html>

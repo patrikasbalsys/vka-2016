@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <style type="text/css">
+        html, body {
+            height: calc(100% - 52px);
+            margin: 0;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            margin: 0 auto;
+        }
+
+        .btn.outline {
+            background: none;
+            padding: 12px 22px;
+        }
+        .btn-primary.outline {
+            border: 2px solid #0099cc;
+            color: #0099cc;
+        }
+        .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+            color: #33a6cc;
+            border-color: #33a6cc;
+        }
+        .btn-primary.outline:active, .btn-primary.outline.active {
+            border-color: #007299;
+            color: #007299;
+            box-shadow: none;
+        }
+
+
+    </style>
+
+    <div class="row" id="wrapper" style="width: 100%; background-image: url({{ asset('resources/images/BlueWeave.png') }})">
+        <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2" style="margin-top: 20vh; text-align: center;  color: whitesmoke">
+            <h2><b>Welcome to Paraweave!</b></h2><br>
+
+            Paraweave is a shop for all sorts of paracord accessories. Bracelets, key fobs, belts - you name it! <br><br>
+            <a class="btn btn-primary btn-lg outline" href="{{ path('all_shop') }}" style="">
+                All Models
+            </a>
+
+            <a class="btn btn-primary btn-lg outline" href="{{ path('cord_catalog') }}">
+                Available Colors
+            </a>
+
+            <a class="btn btn-primary btn-lg outline" href="{{ path('faq') }}">
+                FAQ
+            </a><br>
+
+        </div>
+    </div>
+
+{% endblock %}
+
